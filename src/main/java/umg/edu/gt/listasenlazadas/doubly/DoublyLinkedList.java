@@ -118,8 +118,14 @@ public class DoublyLinkedList<T> {
      * 
      */
     public int clean() {
-        throw new UnsupportedOperationException(
-                "TODO RETO: Implementar clean() en DoublyLinkedList.");
+int total = this.size;
+    	
+    	while(!this.isEmpty()) {
+    		removeFirst();
+    	}
+    	
+    	return total;
+    	
     }
 
     /**
