@@ -133,8 +133,19 @@ int total = this.size;
      * Invierte la lista in-place, actualizando enlaces next/previous.
      */
     public void reverseInPlace() {
-        throw new UnsupportedOperationException(
-                "TODO RETO: Implementar reverseInPlace() en DoublyLinkedList.");
+        DoublyNode<T> current = head;
+        DoublyNode<T> temp = null;
+
+        while (current != null) {
+            temp = current.getNext();
+
+            current.setNext(current.getPrevious());
+            current.setPrevious(temp);
+            current = temp;
+        }
+        temp = head;
+        head = tail;
+        tail = temp;
     }
 
     /**
